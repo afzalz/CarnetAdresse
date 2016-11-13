@@ -1,0 +1,22 @@
+
+{% extends '::base.html.twig' %}
+
+{% block body %}
+{% for article in contact %}
+<table>
+<tr><td>Nom: {{ article.nom}}</td></tr>
+<tr><td>Prenom: {{ article.prenom}}</td></tr>
+<tr><td>Email: {{ article.adresseEmail}}</td></tr>
+<tr><td>Telephone{{ article.telephone}}</td></tr>
+<tr><td>Site: {{ article.site}}</td></tr>
+
+<tr><td><a href="{{ path('modifier', {'id' : article.id }) }}">Modifier</a>
+<a href="{{ path('supprimer', {'id' : article.id }) }}">Supprimer</a></td></tr>
+</table>
+
+</br>
+
+
+{% endfor %}
+{% endblock %}
+
